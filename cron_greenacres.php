@@ -1,13 +1,13 @@
 <?php
 
-$apiUrl = "https://maisonetappartments.onrender.com/run";
+$apiUrl = "https://greenacres-5lyl.onrender.com";
 
 $data = [
-    "source_url" => "https://manda.propertybase.com/api/v2/feed/00DWx000007hlhBMAQ/XML2U/a0hSb000005gQ02IAE/full",
-    "ftp_host" => "ftpsrv.maisonsetappartements.fr",
-    "ftp_username" => "pass_pbs",
-    "ftp_password" => "pbs49637cms+",
-    "ftp_target_path" => "11558.zip"
+    "source_url" => "https://greenacres-5lyl.onrender.com",
+    "ftp_host" => "ftp.vizzit.com",
+    "ftp_username" => "inmoenter",
+    "ftp_password" => "2chfjtag",
+    "ftp_target_path" => "33079a.zip"
 ];
 
 $ch = curl_init($apiUrl);
