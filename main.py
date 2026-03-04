@@ -13,8 +13,8 @@ def run_pipeline():
 
   print("\n=== STEP 1: BUILD SCAN CSV ===")
 
-  AGENCY_ID = "11558"
-  SOURCE_URL = "https://manda.propertybase.com/api/v2/feed/00DWx000007hlhBMAQ/XML2U/a0hSb000005gQ02IAE/full"
+  AGENCY_ID = "33079a"
+  SOURCE_URL = "https://manda.propertybase.com/api/v2/feed/00DWx000007hlhBMAQ/XML2U/a0hSb000005gQEXIA2/full"
 
   RULE_FILE = "Poliris CSV Mapping.xlsx"
   MAP_FILE = "xml_map.json"
@@ -62,7 +62,7 @@ def run_pipeline():
   FIELDS = sorted(FIELDS, key=lambda x: x[0])
 
   print("Columns from XLS:", len(FIELDS))
-
+  
   # ---------------- LOAD JSON MAP ----------------
 
   with open(MAP_FILE) as f:
@@ -466,16 +466,20 @@ def run_pipeline():
   # =========================================================
   # STEP 6 — FTP UPLOAD
   # =========================================================
+  # =========================================================
+  # STEP 6 — FTP UPLOAD
+  # =========================================================
+  # =========================================================
+  # STEP 6 — FTP UPLOAD (implicit FTPS 990)
+  # =========================================================
 
-  from ftplib import FTP
+  from ftplib import FTP_TLS, FTP
+  import socket
+  import ssl
 
-  print("\n=== STEP 6: FTP UPLOAD ===")
-
-  FTP_HOST = "ftpsrv.maisonsetappartements.fr"
-  FTP_USER = "pass_pbs"
-  FTP_PASS = "pbs49637cms+"
-
-  
+  FTP_HOST = "ftp.vizzit.com"
+  FTP_USER = "inmoenter"
+  FTP_PASS = "2chfjtag"
   try:
     ftp = FTP()
     ftp.connect(FTP_HOST, 21, timeout=30)
@@ -501,6 +505,13 @@ def run_pipeline():
   except Exception as e:
     print("❌ FTP upload failed:", e)
 
+
+
+
+#   print("Connected! Uploading...")
+
+#   with open(ZIP_NAME, "rb") as f:
+#       ftp.storbinary(f"STOR {ZIP_NAME}", f)
 
 if __name__ == "__main__":
     run_pipeline()
