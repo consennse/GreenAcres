@@ -1,0 +1,3 @@
+Version=4.12
+Application=Propertybase / 3.0
+Devise=Euro

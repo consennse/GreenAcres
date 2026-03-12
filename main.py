@@ -16,7 +16,7 @@ def run_pipeline():
   AGENCY_ID = "33079a"
   SOURCE_URL = "https://manda.propertybase.com/api/v2/feed/00DWx000007hlhBMAQ/XML2U/a0hSb000005gQEXIA2/full"
 
-  RULE_FILE = "Poliris CSV Mapping.xlsx"
+  RULE_FILE = "Poliris CSV Mapping-3.xlsx"
   MAP_FILE = "xml_map.json"
 
   CSV_NAME = "scan.csv"
@@ -477,9 +477,9 @@ def run_pipeline():
   import socket
   import ssl
 
-  FTP_HOST = "ftp.vizzit.com"
-  FTP_USER = "inmoenter"
-  FTP_PASS = "2chfjtag"
+  FTP_HOST = "ftp.green-acres.com"
+  FTP_USER = "property_base"
+  FTP_PASS = "AS8KnC5i"
   try:
     ftp = FTP()
     ftp.connect(FTP_HOST, 21, timeout=30)
