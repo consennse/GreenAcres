@@ -24,7 +24,23 @@ $response = curl_exec($ch);
 if (curl_errno($ch)) {
     echo "Error: " . curl_error($ch);
 } else {
-    echo $response;
+
+    $result = json_decode($response, true);
+
+    if (isset($result['logs'])) {
+
+        $logFile = __DIR__ . "/logs/green_alps.log";
+
+        $logText = implode("\n", $result['logs']);
+
+        file_put_contents($logFile, $logText . "\n", FILE_APPEND);
+
+        echo "Logs saved successfully";
+    }
+
+    echo "<pre>";
+    print_r($result);
+    echo "</pre>";
 }
 
 curl_close($ch);
