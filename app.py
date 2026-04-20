@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.post("/run")
 def run():
-    portal = "green_alps"
+    portal = "green_acres"
 
     log_buffer.clear()  # reset logs
 

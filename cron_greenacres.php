@@ -29,7 +29,7 @@ if (curl_errno($ch)) {
 
     if (isset($result['logs'])) {
 
-        $logFile = __DIR__ . "/logs/green_alps.log";
+        $logFile = __DIR__ . "/logs/green_acres.log";
 
         $logText = implode("\n", $result['logs']);
 
